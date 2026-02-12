@@ -29,7 +29,7 @@
  *      - Example: convertToString(42) => "42"
  *      - Example: convertToString(true) => "true"
  *      - Example: convertToString(null) => "null"
- *      - Example: convertToString(undefined) => "undefined"
+ *      - Example: convertToString(undefined) => "undefined" 
  *
  *   4. convertToNumber(value)
  *      - Number() se value ko number mein convert karo
@@ -52,21 +52,36 @@
  *   stringToChars("Dak")                  // => ["D", "a", "k"]
  */
 export function parcelToJSON(parcel) {
-  // Your code here
+  try{
+    if( parcel===undefined) return "";
+    return JSON.stringify(parcel);
+  }
+  catch (error){
+    return "";
+  }
 }
 
 export function jsonToParcel(jsonString) {
-  // Your code here
+  try{
+     if(typeof(jsonString)!='string') return null;
+     let stringed = JSON.parse(jsonString);
+     return stringed;
+  }
+  catch (error){
+    return null;
+  }
 }
 
 export function convertToString(value) {
-  // Your code here
+  return String(value);
 }
 
 export function convertToNumber(value) {
-  // Your code here
+  if(Number.isNaN(value)) return null;
+  return Number(value);
 }
 
 export function stringToChars(str) {
-  // Your code here
+  if(typeof(str) != 'string') return [];
+  return Array.from(str);
 }
