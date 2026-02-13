@@ -106,7 +106,7 @@ export function getThaliStats(thalis) {
 }
 
 export function searchThaliMenu(thalis, query) {
-  // Validation
+  
   if (!Array.isArray(thalis) || typeof query !== "string") return [];
 
   const lowerQuery = query.toLowerCase();
@@ -124,7 +124,7 @@ export function searchThaliMenu(thalis, query) {
 
 
 export function generateThaliReceipt(customerName, thalis) {
-  // Validation
+  
   if (
     typeof customerName !== "string" ||
     !Array.isArray(thalis) ||
